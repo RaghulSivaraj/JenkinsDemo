@@ -19,7 +19,12 @@ pipeline {
         }
         stage('Release') {
             steps {
-                echo 'Releasomg'
+                echo 'Releasing'
+            }
+        }
+        stage('Demo') {
+            steps {
+                git branch: 'main', credentialsId: 'MyGithub', url: 'https://github.com/Rahul-designs/JenkinsDemo.git'
             }
         }
     }
